@@ -10,11 +10,13 @@ class App extends Component {
   }
 
   render() {
+    const {isLoggedIn} = this.state
+
     return (
       <div className="container">
-        <Welcome greeting="Hello" name="User" />
-        <button>Login</button>
-        <button>Logout</button>
+        <Welcome />
+        {isLoggedIn && <button>Logout</button>}
+        {!isLoggedIn && <button>Login</button>}
       </div>
     )
   }
